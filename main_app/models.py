@@ -5,6 +5,8 @@ class User(models.Model):
     type = models.CharField(max_length=30)
     password = models.CharField(max_length=200)
     username = models.CharField(max_length=120)
+    first_name = models.CharField(max_length=120, default='First Name')
+    last_name = models.CharField(max_length=120, default='Last Name')
     email = models.EmailField(max_length=120)
     phone = models.CharField(max_length=15)
     address_line1 = models.CharField(max_length=120)
