@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from .models import Profile, MessageBoard
 
-UserModel = get_user_model()
-
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
