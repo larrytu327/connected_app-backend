@@ -2,6 +2,7 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from .serializers import ProfileSerializer, MessageBoardSerializer
 from .models import Profile, MessageBoard
+
 # Create your views here.
 
 class ProfileView(viewsets.ModelViewSet):

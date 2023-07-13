@@ -1,9 +1,9 @@
 from django.db import models
-# from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Profile(models.Model):
-    # user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=1)
     type = models.CharField(max_length=30)
     phone = models.CharField(max_length=15)
     address_line1 = models.CharField(max_length=120)
@@ -20,10 +20,10 @@ class Profile(models.Model):
     # Completed property is status of a task, task is either completed or not completed.
 
     def __str__(self):
-        return self.user
+        return self.user.username
     
-    # class Meta:
-    #     ordering = ['last_name', 'first_name']
+    class Meta:
+        ordering = ['type']
 
 class MessageBoard(models.Model):
     subject = models.CharField(max_length=300)

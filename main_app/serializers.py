@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from .models import Profile, MessageBoard
 
+UserModel = get_user_model()
+
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
@@ -10,3 +12,8 @@ class MessageBoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = MessageBoard
         fields = ('id', 'subject', 'date_added', 'posts')
+
+
+
+
+
