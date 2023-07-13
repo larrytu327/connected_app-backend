@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import User
+from .models import Profile, MessageBoard
 # Register your models here.
 
-class UserAdmin(admin.ModelAdmin):
-    list_display = ('type', 'password', 'username', 'first_name', 'last_name', 'email', 'phone', 'address_line1', 'address_city', 'address_state', 'address_zip', 'birthdate', 'info', 'parents', 'teachers', 'students', 'classes', 'completed')
+class ProfileAdmin(admin.ModelAdmin):
+    list_display = ('type', 'phone', 'address_line1', 'address_city', 'address_state', 'address_zip', 'birthdate', 'info', 'parents', 'teachers', 'students', 'classes', 'completed')
 
-admin.site.register(User, UserAdmin)
+class MessageBoardAdmin(admin.ModelAdmin):
+    list_display = ('subject', 'date_added', 'posts')
+
+admin.site.register(Profile, ProfileAdmin)
+admin.site.register(MessageBoard, MessageBoardAdmin)
