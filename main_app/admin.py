@@ -6,9 +6,6 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
-# class ProfileAdmin(admin.ModelAdmin):
-#     list_display = ('type', 'phone', 'address_line1', 'address_city', 'address_state', 'address_zip', 'birthdate', 'info', 'parents', 'teachers', 'students', 'classes', 'completed')
-
 class MessageBoardAdmin(admin.ModelAdmin):
     list_display = ('subject', 'date_added', 'posts')
 
@@ -28,7 +25,5 @@ class CustomUserAdmin(UserAdmin):
     # Specifies the fields to be used for filtering in the admin list view
     list_filter = ['is_staff', 'type', 'is_active']
 
-
-# admin.site.register(Profile, ProfileAdmin)
 admin.site.register(MessageBoard, MessageBoardAdmin)
 admin.site.register(User, CustomUserAdmin)

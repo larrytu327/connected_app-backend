@@ -7,10 +7,6 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 # Create your views here.
 
-# class ProfileView(viewsets.ModelViewSet):
-#     serializer_class = ProfileSerializer
-#     queryset = Profile.objects.all()
-
 class MessageBoardView(viewsets.ModelViewSet):
     serializer_class = MessageBoardSerializer
     queryset = MessageBoard.objects.all()
