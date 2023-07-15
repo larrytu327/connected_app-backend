@@ -26,4 +26,15 @@ router.register(r'appusers', views.AppUserView, 'appuser')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/register/', views.UserRegister.as_view(), name='register'),
+    path('api/login/', views.UserLogin.as_view(), name='login'),
+    path('api/logout/', views.UserLogout.as_view(), name='logout'),
+    path('api/user/', views.UserView.as_view(), name='user'),
 ]
+
+
+# {
+#     "email": "test@example.com",
+#     "username": "tester",
+#     "password": "testing123"
+# }
