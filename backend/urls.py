@@ -20,11 +20,12 @@ from rest_framework import routers
 from main_app import views
 
 router = routers.DefaultRouter()
-router.register(r'profiles', views.ProfileView, 'profile')
+# router.register(r'profiles', views.ProfileView, 'profile')
 router.register(r'messageboards', views.MessageBoardView, 'messageboard')
+router.register(r'appusers', views.AppUserView, 'appuser')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
 ]
